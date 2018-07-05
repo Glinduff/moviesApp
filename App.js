@@ -16,9 +16,17 @@ export default class App extends React.Component {
   render() {
     return (
       <ScrollView style={styles.container}>
-        {this.state.cinemas.map(cinema => (
-          <Text>{cinema.name}</Text>
-        ))}
+        <View>
+          {this.state.cinemas.map(cinema => (
+          <View key={cinema.id}>
+            <Text >{cinema.name}</Text>
+            <View>
+
+              <Text>{JSON.stringify(cinema.movies)}</Text>
+            </View>
+          </View>
+          ))}
+        </View>
       </ScrollView>
     );
   }
